@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Markdown to SSML Converter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/material.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Markdown to SSML Converter</h1>
+            <p>Convert your Markdown text to Speech Synthesis Markup Language (SSML)</p>
+        </header>
+
+        <main>
+            <div class="editor-container">
+                <div class="editor-box">
+                    <h2>Markdown Input</h2>
+                    <textarea id="markdown-editor" placeholder="Enter your Markdown text here..."></textarea>
+                </div>
+                <div class="editor-box">
+                    <h2>SSML Output</h2>
+                    <textarea id="ssml-output" readonly></textarea>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button id="convert-btn">Convert to SSML</button>
+                <button id="copy-btn">Copy SSML</button>
+                <div id="status-message"></div>
+            </div>
+
+            <div class="sample-container">
+                <h3>Sample Markdown</h3>
+                <button id="load-sample">Load Sample</button>
+                <pre id="sample-markdown">
+# Introduction
+
+This is a **sample** document to demonstrate the Markdown to SSML conversion.
+
+## Section One
+
+Here's a list of items:
+* First item
+* Second item with *emphasis*
+* Third item
+
+## Section Two
+
+This is another paragraph with some text.
+                </pre>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by Gemini Pro 2.5 | <a href="https://github.com/danielrosehill/Gemini-SSML-Formatter" target="_blank">GitHub Repository</a></p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/markdown/markdown.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/xml/xml.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
